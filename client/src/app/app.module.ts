@@ -9,8 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { AiohnsdComponent } from './aiohnsd/aiohnsd.component';
 import { TestComponent } from './test/test.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { TestComponent } from './test/test.component';
     ProfileComponent,
     LoginComponent,
     HomeComponent,
-    AiohnsdComponent,
-    TestComponent
+    TestComponent,
+    ContactComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
