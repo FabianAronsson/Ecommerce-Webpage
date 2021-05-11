@@ -1,6 +1,6 @@
 const ctrlAuth = require('../controllers/authentication');
 const ctrlProfile = require('../controllers/profile');
-const ctrlCart = require('../controllers/cart')
+const ctrlCart = require('../controllers/cart');
 const express = require('express');
 const jwt = require('express-jwt');
 const router = express.Router();
