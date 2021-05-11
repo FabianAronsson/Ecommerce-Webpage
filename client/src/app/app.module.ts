@@ -9,7 +9,6 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { TestComponent } from './test/test.component';
 import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { ContactComponent } from './contact/contact.component';
     ProfileComponent,
     LoginComponent,
     HomeComponent,
-    TestComponent,
     ContactComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],

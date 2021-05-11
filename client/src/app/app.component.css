@@ -1,0 +1,40 @@
+li {
+    margin-left: 2rem;
+    margin-bottom: 0;
+}
+
+nav a {
+    color: #181819;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+nav a:hover {
+    color: #323233;
+}
+
+.searchBar>.form-control,
+.searchBar>.form-select,
+.searchBar>.input-group-text,
+.searchBar>.btn {
+    padding: 0rem 16rem 0rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+    height: 2.5rem;
+}
+
+.searchBar>.form-select {
+    padding-right: 3rem;
+}
+
+.searchForm {
+    height: 2.5rem;
+}
+
+.logoutButton {
+    cursor: pointer;
+}
+
+.logoutButton:hover {
+    color: #959595;
+}

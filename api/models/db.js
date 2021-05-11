@@ -1,6 +1,6 @@
 require('./users');
 const mongoose = require('mongoose');
-const dbURI = 'mongodb://localhost:27017/meanAuth';
+const dbURI = 'mongodb://localhost:27017/webshop';
 
 mongoose.set('useCreateIndex', true);
 mongoose.connect(dbURI, {
