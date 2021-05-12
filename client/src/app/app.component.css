@@ -6,22 +6,24 @@ li {
 nav a {
     color: #181819;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+}
+
+nav {
+    background-color: #fff;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .topNavbar {
     margin-top: 0.5rem;
-}
-
-nav a:hover {
-    color: #6c6c6d;
+    padding-bottom: 0;
 }
 
 .searchBar>.form-control,
 .searchBar>.form-select,
 .searchBar>.input-group-text,
 .searchBar>.btn {
-    padding: 0rem 16rem 0rem 1rem;
+    padding: 0rem 1rem 0rem 1rem;
     font-size: 1.25rem;
     border-radius: 0.3rem;
     height: 2.5rem;
@@ -33,6 +35,7 @@ nav a:hover {
 
 .searchForm {
     height: 2.5rem;
+    margin-top: 0.5rem;
 }
 
 .logoutButton {
@@ -40,11 +43,38 @@ nav a:hover {
 }
 
 .logoutButton:hover {
-    color: #959595;
+    color: #f13636;
 }
 
 .ruler {
     margin: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     margin-top: 0.5rem;
+}
+
+#icon:hover {
+    color: #f13636;
+}
+
+.navbar-brand {
+    padding-top: 0;
+}
+
+.personalButton:hover {
+    color: #6F87D6;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.btn-outline-dark:hover {
+    color: #fff;
+    background-color: #6F87D6;
+    border-color: #6F87D6;
 }

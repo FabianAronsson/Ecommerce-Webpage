@@ -1,8 +1,10 @@
-<nav class="navbar navbar-expand-lg topNavbar sticky-top navbar-light">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg topNavbar sticky-top navbar-light d-flex flex-column">
+    <div class="container-fluid ">
         <div class="d-flex  mt-2 m-auto ">
             <a class="navbar-brand" routerLink="/">
-                <i class="fas fa-gamepad fa-2x" style="font-size: 2.3rem;"></i>
+                <img src="./../assets/svg/logo1.svg" width="80rem" alt="">
+                <img src="./../assets/svg/logo2.svg" width="80rem" alt="">
+                <img src="./../assets/svg/logo3.svg" width="100rem" alt="">
             </a>
             <form class="d-flex searchForm">
                 <div class="searchBar me-2 ">
@@ -10,27 +12,28 @@
                 </div>
                 <button class="btn btn-outline-dark" type="submit"><span class="fas fa-search fa-lg searchIcon"></span></button>
             </form>
-            <ul class="nav collapse navbar-collapse" id="navbarNav">
+            <ul class="nav collapse navbar-collapse " id="navbarNav">
+
                 <li>
                     <!--Should have an ngif for generating the cart-->
-                    <a class="text-center d-flex flex-column " routerLink="/profile">
+                    <a class="text-center d-flex flex-column personalButton" routerLink="/profile">
                         <i class="fas fa-shopping-cart"></i> Kundvagn
                     </a>
                 </li>
                 <li *ngIf="!auth.isLoggedIn()">
-                    <a class="text-center d-flex flex-column " routerLink="/login">
+                    <a class="text-center d-flex flex-column personalButton" routerLink="/login">
                         <i class="fas fa-sign-in-alt fa-lg"></i>Logga in</a>
                 </li>
                 <li *ngIf="auth.isLoggedIn()">
 
-                    <a class="text-center d-flex flex-column " routerLink="/profile">
+                    <a class="text-center d-flex flex-column personalButton" routerLink="/profile">
                         <i class="far fa-user fa-lg"></i> Min profil
                     </a>
 
                 </li>
                 <li *ngIf="auth.isLoggedIn()" class="logoutButton">
-                    <a (click)="auth.logout()" class="text-center d-flex flex-column ">
-                        <i class="fas fa-sign-out-alt fa-lg"></i> Logga ut
+                    <a (click)="auth.logout()" class="text-center d-flex flex-column " id="icon">
+                        <i class="fas fa-sign-out-alt fa-lg "></i> Logga ut
                     </a>
                 </li>
             </ul>
@@ -40,9 +43,8 @@
         </button>
     </div>
 
+    <hr class="ruler" style="width: 100%;">
 </nav>
-<hr class="ruler">
-
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
         <h5 id="offcanvasRightLabel">Meny</h5>
@@ -56,7 +58,7 @@
                     <ul class="nav flex-column">
                         <li>
                             <a class="text-center d-flex flex-column mb-4 mt-2" data-bs-dismiss="offcanvas" routerLink="/profile">
-                                <i class="fas fa-shopping-cart"></i> Kundvagn
+                                <i class="fas fa-shopping-cart "></i> Kundvagn
                             </a>
                         </li>
 
@@ -69,8 +71,8 @@
                                 <i class="far fa-user fa-lg"></i> Min profil
                             </a>
                         </li>
-                        <li *ngIf="auth.isLoggedIn()" data-bs-dismiss="offcanvas" class="mb-4">
-                            <a (click)="auth.logout()" class="text-center d-flex flex-column ">
+                        <li *ngIf="auth.isLoggedIn()" data-bs-dismiss="offcanvas" class="logoutButton mb-4">
+                            <a (click)="auth.logout()" class="text-center d-flex flex-column logoutButton">
                                 <i class="fas fa-sign-out-alt"></i> Logga ut
                             </a>
                         </li>

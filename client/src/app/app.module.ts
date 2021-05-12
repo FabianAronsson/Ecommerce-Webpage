@@ -18,7 +18,7 @@ import { ContactComponent } from './contact/contact.component';
     ProfileComponent,
     LoginComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
