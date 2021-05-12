@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light ">
-    <div class="container-fluid  ">
+<nav class="navbar navbar-expand-lg topNavbar sticky-top navbar-light">
+    <div class="container-fluid">
         <div class="d-flex  mt-2 m-auto ">
             <a class="navbar-brand" routerLink="/">
                 <i class="fas fa-gamepad fa-2x" style="font-size: 2.3rem;"></i>
@@ -18,7 +18,8 @@
                     </a>
                 </li>
                 <li *ngIf="!auth.isLoggedIn()">
-                    <a routerLink="/login">Logga in</a>
+                    <a class="text-center d-flex flex-column " routerLink="/login">
+                        <i class="fas fa-sign-in-alt fa-lg"></i>Logga in</a>
                 </li>
                 <li *ngIf="auth.isLoggedIn()">
 
@@ -27,8 +28,10 @@
                     </a>
 
                 </li>
-                <li *ngIf="auth.isLoggedIn()" class="logoutButton pt-3">
-                    <a (click)="auth.logout()">Logga ut</a>
+                <li *ngIf="auth.isLoggedIn()" class="logoutButton">
+                    <a (click)="auth.logout()" class="text-center d-flex flex-column ">
+                        <i class="fas fa-sign-out-alt fa-lg"></i> Logga ut
+                    </a>
                 </li>
             </ul>
         </div>
@@ -36,7 +39,9 @@
           <span class="navbar-toggler-icon"></span>
         </button>
     </div>
+
 </nav>
+<hr class="ruler">
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
@@ -44,33 +49,43 @@
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light ">
+        <hr class="ruler">
+        <nav class="navbar navbar-light">
             <div class="container-fluid">
                 <div class="d-flex mt-2 m-auto">
                     <ul class="nav flex-column">
                         <li>
-                            <!--Should have an ngif for generating the cart-->
                             <a class="text-center d-flex flex-column mb-4 mt-2" data-bs-dismiss="offcanvas" routerLink="/profile">
                                 <i class="fas fa-shopping-cart"></i> Kundvagn
                             </a>
                         </li>
+
                         <li *ngIf="!auth.isLoggedIn()" class="mb-4">
                             <a data-bs-dismiss="offcanvas" routerLink="/login">Logga in</a>
                         </li>
+
                         <li *ngIf="auth.isLoggedIn()" class="mb-4">
                             <a class="text-center d-flex flex-column" data-bs-dismiss="offcanvas" routerLink="/profile">
                                 <i class="far fa-user fa-lg"></i> Min profil
                             </a>
                         </li>
                         <li *ngIf="auth.isLoggedIn()" data-bs-dismiss="offcanvas" class="mb-4">
-                            <a (click)="auth.logout()">Logga ut</a>
+                            <a (click)="auth.logout()" class="text-center d-flex flex-column ">
+                                <i class="fas fa-sign-out-alt"></i> Logga ut
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <hr class="ruler">
     </div>
 </div>
+
+
+
+
+
 
 <router-outlet></router-outlet>
 

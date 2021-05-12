@@ -9,8 +9,12 @@ nav a {
     font-size: 1.3rem;
 }
 
+.topNavbar {
+    margin-top: 0.5rem;
+}
+
 nav a:hover {
-    color: #323233;
+    color: #6c6c6d;
 }
 
 .searchBar>.form-control,
@@ -37,4 +41,10 @@ nav a:hover {
 
 .logoutButton:hover {
     color: #959595;
+}
+
+.ruler {
+    margin: 0;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
 }
