@@ -11,7 +11,7 @@ nav a {
 
 nav {
     background-color: #fff;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+    /*animation: 1s ease-out 0s 1 slideInFromLeft;*/
 }
 
 .topNavbar {

@@ -1,0 +1,7 @@
+.productImage {
+    border-radius: 5px;
+}
+
+.coverImage {
+    border-radius: 0 0 5px 5px;
+}

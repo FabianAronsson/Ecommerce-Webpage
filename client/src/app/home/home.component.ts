@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartServiceService, ProductPayload } from '../cart-service.service';
 
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent{
   product: ProductPayload = {
     productName: "",
     productPrice: 0,
@@ -18,7 +20,7 @@ export class HomeComponent {
   
 
   constructor(private cart:CartServiceService, private router: Router) {}
-
+  
 /*
   addToCart() {
     this.cart.updateCart(this.product).subscribe(

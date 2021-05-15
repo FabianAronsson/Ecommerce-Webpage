@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg topNavbar sticky-top navbar-light d-flex flex-column">
+<nav data-aos="fade-right" data-aos-duration="1000" class="navbar navbar-expand-lg topNavbar sticky-top navbar-light d-flex flex-column">
     <div class="container-fluid ">
         <div class="d-flex  mt-2 m-auto ">
             <a class="navbar-brand" routerLink="/">
-                <img src="./../assets/svg/logo1.svg" width="80rem" alt="">
-                <img src="./../assets/svg/logo2.svg" width="80rem" alt="">
-                <img src="./../assets/svg/logo3.svg" width="100rem" alt="">
+                <img src="./../assets/svg/logo1.svg" width="80rem" class="img-fluid" alt="">
+                <img src="./../assets/svg/logo2.svg" width="80rem" class="img-fluid" alt="">
+                <img src="./../assets/svg/logo3.svg" width="100rem" class="img-fluid" alt="">
             </a>
             <form class="d-flex searchForm">
                 <div class="searchBar me-2 ">
@@ -16,7 +16,7 @@
 
                 <li>
                     <!--Should have an ngif for generating the cart-->
-                    <a class="text-center d-flex flex-column" data-bs-dismiss="offcanvas" routerLink="/contact">
+                    <a class="text-center d-flex flex-column personalButton" data-bs-dismiss="offcanvas" routerLink="/contact">
                         <i class="fas fa-shopping-cart "></i> Kundvagn </a>
                 </li>
                 <li *ngIf="!auth.isLoggedIn()">
