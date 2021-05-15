@@ -16,9 +16,8 @@
 
                 <li>
                     <!--Should have an ngif for generating the cart-->
-                    <a class="text-center d-flex flex-column personalButton" routerLink="/profile">
-                        <i class="fas fa-shopping-cart"></i> Kundvagn
-                    </a>
+                    <a class="text-center d-flex flex-column" data-bs-dismiss="offcanvas" routerLink="/contact">
+                        <i class="fas fa-shopping-cart "></i> Kundvagn </a>
                 </li>
                 <li *ngIf="!auth.isLoggedIn()">
                     <a class="text-center d-flex flex-column personalButton" routerLink="/login">
@@ -57,9 +56,8 @@
                 <div class="d-flex mt-2 m-auto">
                     <ul class="nav flex-column">
                         <li>
-                            <a class="text-center d-flex flex-column mb-4 mt-2" data-bs-dismiss="offcanvas" routerLink="/profile">
-                                <i class="fas fa-shopping-cart "></i> Kundvagn
-                            </a>
+                            <a class="text-center d-flex flex-column" data-bs-dismiss="offcanvas" routerLink="/contact">
+                                <i class="fas fa-shopping-cart "></i> Kundvagn </a>
                         </li>
 
                         <li *ngIf="!auth.isLoggedIn()" class="mb-4">
@@ -84,7 +82,7 @@
     </div>
 </div>
 
-
+<!--<div class="aaaa" *ngIf="auth.isLoggedIn()">{{ details?.email }}</div>-->
 
 
 

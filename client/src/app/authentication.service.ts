@@ -8,6 +8,7 @@ export interface UserDetails {
   _id: string;
   email: string;
   name: string;
+  productName : string;
   exp: number;
   iat: number;
 }
@@ -44,7 +45,7 @@ export class AuthenticationService {
 
   private request(
     method: "post" | "get",
-    type: "login" | "register" | "profile",
+    type: "login" | "register" | "profile" | "contact",
     user?: TokenPayload
   ): Observable<any> {
     let base$;
@@ -106,5 +107,9 @@ export class AuthenticationService {
 
   public profile(): Observable<any> {
     return this.request("get", "profile");
+  }
+
+  public cart(): Observable<any> {
+    return this.request("get", "contact");
   }
 }
