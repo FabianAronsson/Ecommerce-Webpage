@@ -12,7 +12,15 @@
                         <form (submit)="validateForm()" class="form-signin">
                             <div class="form-label-group">
                                 <label for="name"></label>
-                                <input type="text" class="form-control" name="name" placeholder="Ditt namn" [(ngModel)]="credentials.name" [required] />
+                                <input type="text" class="form-control" name="name" placeholder="Förnamn" [(ngModel)]="credentials.name" required />
+                            </div>
+                            <div class="form-label-group">
+                                <label for="lastName"></label>
+                                <input type="text" class="form-control" name="lastName" placeholder="Efternamn" [(ngModel)]="credentials.lastName" required />
+                            </div>
+                            <div class="form-label-group">
+                                <label for="phone"></label>
+                                <input type="text" class="form-control" name="phone" placeholder="Telefonnummer" [(ngModel)]="credentials.phone" required />
                             </div>
                             <div class="form-label-group">
                                 <label for="email"></label>

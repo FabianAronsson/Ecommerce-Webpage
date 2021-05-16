@@ -8,7 +8,9 @@ export interface UserDetails {
   _id: string;
   email: string;
   name: string;
-  productName : string;
+  lastName: string;
+  phone: string;
+  productName: string;
   exp: number;
   iat: number;
 }
@@ -21,6 +23,8 @@ export interface TokenPayload {
   email: string;
   password: string;
   name?: string;
+  lastName?: string;
+  phone?: string;
 }
 
 @Injectable({

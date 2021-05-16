@@ -6,7 +6,10 @@ module.exports.register = (req, res) => {
     const user = new User();
 
     user.name = req.body.name;
+    user.lastName = req.body.lastName;
+    user.phone = req.body.phone;
     user.email = req.body.email;
+
     user.productName = "";
     user.productPrice = 0;
     user.productAmount = 0;
