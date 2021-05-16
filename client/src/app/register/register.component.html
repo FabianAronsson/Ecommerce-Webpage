@@ -1,25 +1,35 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h1>Register</h1>
-            <p class="lead">
-                Already a member? Please <a routerLink="/login">log in</a> instead.
-            </p>
-            <form (submit)="register()">
-                <div class="form-group">
-                    <label for="name">Full name</label>
-                    <input type="text" class="form-control" name="name" placeholder="Enter your name" [(ngModel)]="credentials.name" />
+<div class="wrapper">
+    <br><br><br><br><br><br><br>
+    <div class="container" data-aos="zoom-in" data-aos-duration="500">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <div *ngIf="showPopup" class="alert alert-danger" role="alert">
+                            Vänligen fyll i alla fält.
+                        </div>
+                        <h4 class="card-title text-center">Skapa konto</h4>
+                        <form (submit)="validateForm()" class="form-signin">
+                            <div class="form-label-group">
+                                <label for="name"></label>
+                                <input type="text" class="form-control" name="name" placeholder="Ditt namn" [(ngModel)]="credentials.name" [required] />
+                            </div>
+                            <div class="form-label-group">
+                                <label for="email"></label>
+                                <input type="email" class="form-control" name="email" placeholder="E-postaddress" [(ngModel)]="credentials.email" required/>
+                            </div>
+                            <div class="form-label-group">
+                                <label for="password"></label>
+                                <input type="password" class="form-control" name="password" placeholder="Lösenord" [(ngModel)]="credentials.password" required/>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-primary text-uppercase">Skapa konto</button>
+                        </form>
+                        <p class="text-muted mt-4">
+                            Har du redan ett konto? <a routerLink="/login">Logga in</a>.
+                        </p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email" />
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password" />
-                </div>
-                <button type="submit" class="btn btn-default">Register!</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>

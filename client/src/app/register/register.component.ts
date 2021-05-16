@@ -13,6 +13,8 @@ export class RegisterComponent {
     password: ""
   };
 
+  showPopup:boolean = false;
+
   constructor(private auth: AuthenticationService, private router: Router) {}
 
   register() {
@@ -24,5 +26,14 @@ export class RegisterComponent {
         console.error(err);
       }
     );
+  }
+
+  validateForm(){
+    if(this.credentials.email.length > 0 && this.credentials.password.length > 0 && this.credentials.name.length > 0){
+      this.register();
+    }
+    else{
+      this.showPopup = true;
+    }
   }
 }
