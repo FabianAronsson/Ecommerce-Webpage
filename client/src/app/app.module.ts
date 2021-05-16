@@ -10,6 +10,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProductComponent } from './product/product.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     HomeComponent,
     ContactComponent,
+    ProductComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

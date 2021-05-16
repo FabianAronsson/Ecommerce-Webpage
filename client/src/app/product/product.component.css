@@ -1,0 +1,49 @@
+.companyLink {
+    text-decoration: none;
+}
+
+.readMore {
+    text-decoration: none;
+    color: rgb(65, 65, 65);
+}
+
+.checkoutCard {
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.29);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.29);
+}
+
+.priceInfo {
+    color: #FAA72A;
+}
+
+.inStore {
+    color: #94D036;
+}
+
+.priceGuarantee {
+    border: 1px solid #FAA72A;
+    border-radius: 25px;
+    font-size: 1rem;
+    padding: 0.8rem
+}
+
+table {
+    font-size: 0.9rem;
+}
+
+td img {
+    padding-right: 0.25rem;
+}
+
+tr td {
+    border: solid #E5E5E5 1px;
+}
+
+th {
+    border: none;
+    width: 12rem;
+}
+
+td a {
+    text-decoration: none;
+}

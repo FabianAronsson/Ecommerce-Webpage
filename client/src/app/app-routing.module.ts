@@ -6,13 +6,15 @@ import { RegisterComponent } from "./register/register.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { ContactComponent } from "./contact/contact.component";
 import { AuthGuard } from "./auth.guard";
+import { ProductComponent } from "./product/product.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: "contact", component: ContactComponent }
+  { path: "contact", component: ContactComponent },
+  { path: "product", component: ProductComponent }
 ];
 
 @NgModule({

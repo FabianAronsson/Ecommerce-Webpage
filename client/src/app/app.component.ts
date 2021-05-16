@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthenticationService, UserDetails } from "./authentication.service";
 import { Router, NavigationEnd } from '@angular/router';
-import { isBuffer } from "util";
 import * as Aos from "aos";
 @Component({
   selector: "app-root",
