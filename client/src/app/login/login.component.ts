@@ -12,6 +12,8 @@ export class LoginComponent {
     password: ""
   };
 
+  showPopup:boolean = false;
+
   constructor(private auth: AuthenticationService, private router: Router) {}
 
   login() {
@@ -23,5 +25,15 @@ export class LoginComponent {
         console.error(err);
       }
     );
+  }
+
+
+  validateForm(){
+    if(this.credentials.email.length > 0 && this.credentials.password.length > 0){
+      this.login();
+    }
+    else{
+      this.showPopup = true;
+    }
   }
 }
