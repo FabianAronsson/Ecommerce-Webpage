@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
     }
 });
 
-const Product = mongoose.model('product', productSchema);
+const Product = mongoose.model('Product', productSchema);
 
 
 /**
@@ -39,7 +39,7 @@ module.exports.createProducts = (req, res) => {
         if (count == 0) {
             const product = new Product();
 
-            product.iconPath = "../../client/src/assets/productIcons/residentIcon.webp";
+            product.iconPath = "../assets/images/productIcons/residentIcon.webp";
             product.price = 628;
             product.ID = "2376UF";
             product.name = "Resident Evil Village";

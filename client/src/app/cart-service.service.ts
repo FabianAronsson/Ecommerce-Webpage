@@ -20,7 +20,7 @@ export interface UserPayload {
 export class CartService {
   private token: string;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient) {}
 
   private getToken(): string {
     if (!this.token) {
@@ -36,7 +36,7 @@ export class CartService {
 
   private request(
     method: "post" | "get",
-    type: "cart",
+    type: "cart" | "showCart" | "user",
     user?: UserPayload
   ): Observable<any> {
     let base$;
@@ -61,5 +61,13 @@ export class CartService {
 
   public addToCart(userPayload:UserPayload):Observable<any> {
     return this.request("post", "cart", userPayload);
+  }
+
+  public showCart(userPayload:UserPayload):Observable<any> {
+    return this.request("post", "showCart", userPayload);
+  }
+
+  public getUser(userPayload:UserPayload):Observable<any> {
+    return this.request("post", "user", userPayload);
   }
 }

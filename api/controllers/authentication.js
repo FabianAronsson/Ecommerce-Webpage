@@ -12,7 +12,7 @@ module.exports.register = (req, res) => {
 
     user.productName = "";
     user.productPrice = 0;
-    user.productAmount = 0;
+    user.productAmount = 1;
     user.setPassword(req.body.password);
 
     user.save(() => {

@@ -15,6 +15,8 @@ const auth = jwt({
 router.get('/profile', auth, ctrlProfile.profileRead);
 
 router.post('/cart', ctrlCart.updateCart);
+router.post('/showCart', ctrlCart.getUserCart);
+router.post('/user', ctrlProfile.profileRead)
 
 router.get('/home', ctrlProfile.profileRead)
 

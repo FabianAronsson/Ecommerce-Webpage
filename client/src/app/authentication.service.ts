@@ -11,6 +11,7 @@ export interface UserDetails {
   lastName: string;
   phone: string;
   productName: string;
+  productAmount: number;
   exp: number;
   iat: number;
 }
