@@ -26,12 +26,39 @@
                     <h6 class="card-subtitle mb-2 inStore">I lager</h6>
                     <h6 class="card-subtitle mb-2 d-flex">
                         <h6 class="text-muted"> Leveranstid:</h6> &nbsp; 2-4 arbetsdagar</h6>
-                    <button class="btn btn-primary" #target style="width: 100%;">Lägg i varukorgen</button>
+                    <button (click)="addToCart()" class="btn btn-primary" #target data-bs-toggle="modal" data-bs-target="#modal">Lägg i varukorgen</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div *ngIf="auth.isLoggedIn(); else loggedOut" class="modal-content">
+            <div class="modal-body text-center">
+                <h3 class="modal-title text-start mb-2" id="exampleModalLabel">Tillagt i varukorgen!</h3>
+                <button type="button" class="btn mt-2 mb-2" data-bs-dismiss="modal">Fortsätt handla</button>
+                <button routerLink="/cart" type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Visa varukorg</button>
+            </div>
+        </div>
+        <ng-template #loggedOut>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Var vänlig logga in först.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <a routerLink="/login">
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary me-2">Logga in</button>
+                    </a>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
 
 <br><br><br>
 

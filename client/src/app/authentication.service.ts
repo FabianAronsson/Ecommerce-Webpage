@@ -49,7 +49,7 @@ export class AuthenticationService {
 
   private request(
     method: "post" | "get",
-    type: "login" | "register" | "profile" | "contact",
+    type: "login" | "register" | "profile" | "cart",
     user?: TokenPayload
   ): Observable<any> {
     let base$;
@@ -70,7 +70,7 @@ export class AuthenticationService {
         return data;
       })
     );
-
+    
     return request;
   }
 
@@ -111,9 +111,5 @@ export class AuthenticationService {
 
   public profile(): Observable<any> {
     return this.request("get", "profile");
-  }
-
-  public cart(): Observable<any> {
-    return this.request("get", "contact");
   }
 }

@@ -22,6 +22,7 @@ export class LoginComponent {
         this.router.navigateByUrl("/");
       },
       err => {
+        this.showPopup = true;
         console.error(err);
       }
     );

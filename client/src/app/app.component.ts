@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthenticationService, UserDetails } from "./authentication.service";
-import { Router, NavigationEnd } from '@angular/router';
+import { AuthenticationService } from "./authentication.service";
+import { Router } from '@angular/router';
 import * as Aos from "aos";
 @Component({
   selector: "app-root",
@@ -18,15 +18,3 @@ export class AppComponent implements OnInit{
 }
 
 
-/*this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) { 
-        this.auth.profile().subscribe(
-          user => {
-            this.details = user;
-          },
-          err => {
-            console.error(err);
-          }
-        );
-      }
-    });*/

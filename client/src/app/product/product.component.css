@@ -5,6 +5,7 @@
 .readMore {
     text-decoration: none;
     color: rgb(65, 65, 65);
+    cursor: pointer;
 }
 
 .checkoutCard {
@@ -46,4 +47,14 @@ th {
 
 td a {
     text-decoration: none;
+}
+
+button {
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.29);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.29);
+}
+
+.modal-content {
+    border: none;
 }

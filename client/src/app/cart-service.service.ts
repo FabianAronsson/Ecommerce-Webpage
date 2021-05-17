@@ -4,26 +4,23 @@ import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 
-
-
-export interface ProductPayload {
-  productName: string;
-  productPrice: number;
-  productAmount: number;
-}
-
 interface TokenResponse {
   token: string;
 }
 
+export interface UserPayload {
+  _id: string;
+  productID: string;
+  productAmount: number;
+}
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-export class CartServiceService {
+export class CartService {
   private token: string;
-  constructor(private http: HttpClient, private router: Router) { }
 
+  constructor(private http: HttpClient, private router: Router) {}
 
   private getToken(): string {
     if (!this.token) {
@@ -31,7 +28,7 @@ export class CartServiceService {
     }
     return this.token;
   }
-  
+
   private saveToken(token: string): void {
     localStorage.setItem("mean-token", token);
     this.token = token;
@@ -39,18 +36,17 @@ export class CartServiceService {
 
   private request(
     method: "post" | "get",
-    type: "product",
-    product?: ProductPayload
+    type: "cart",
+    user?: UserPayload
   ): Observable<any> {
     let base$;
-
     if (method === "post") {
-      base$ = this.http.post(`/api/${type}`, {
+      base$ = this.http.post(`/api/${type}`, user);
+    } else {
+      base$ = this.http.get(`/api/${type}`, {
         headers: { Authorization: `Bearer ${this.getToken()}` }
       });
     }
-    
-
     const request = base$.pipe(
       map((data: TokenResponse) => {
         if (data.token) {
@@ -59,11 +55,11 @@ export class CartServiceService {
         return data;
       })
     );
-
+    
     return request;
   }
 
-  public updateCart(product: ProductPayload): Observable<any> {
-    return this.request("post", "product", product);
+  public addToCart(userPayload:UserPayload):Observable<any> {
+    return this.request("post", "cart", userPayload);
   }
 }

@@ -9,9 +9,9 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
 import { ProductComponent } from './product/product.component';
 import { FooterComponent } from './footer/footer.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -21,9 +21,9 @@ import { FooterComponent } from './footer/footer.component';
     ProfileComponent,
     LoginComponent,
     HomeComponent,
-    ContactComponent,
     ProductComponent,
     FooterComponent,
+    CartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

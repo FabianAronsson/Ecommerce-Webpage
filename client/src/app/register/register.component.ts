@@ -31,7 +31,7 @@ export class RegisterComponent {
   }
 
   validateForm(){
-    if(this.credentials.email.length > 0 && this.credentials.password.length > 0 && this.credentials.name.length > 0 && this.credentials.lastName.length > 0 && this.credentials.phone.length > 0){
+    if(this.credentials.email.length > 0 && this.credentials.password.length > 0 && this.credentials.name.length > 0 && this.credentials.lastName.length > 0){
       this.register();
     }
     else{

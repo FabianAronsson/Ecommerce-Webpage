@@ -19,7 +19,7 @@
                     </form>
                 </li>
                 <li>
-                    <a class="text-center d-flex flex-column personalButton" data-bs-dismiss="offcanvas" routerLink="/contact">
+                    <a class="text-center d-flex flex-column personalButton" data-bs-dismiss="offcanvas" routerLink="/cart">
                         <i class="fas fa-shopping-cart"></i> Kundvagn </a>
                 </li>
                 <li *ngIf="!auth.isLoggedIn()">
@@ -69,7 +69,7 @@
                             </form>
                         </li>
                         <li>
-                            <a class="text-center d-flex flex-column personalButton mb-4" data-bs-dismiss="offcanvas" routerLink="/contact">
+                            <a class="text-center d-flex flex-column personalButton mb-4" data-bs-dismiss="offcanvas" routerLink="/cart">
                                 <i class="fas fa-shopping-cart"></i> Kundvagn </a>
                         </li>
                         <li *ngIf="!auth.isLoggedIn()" class="mb-4">
@@ -95,11 +95,6 @@
     </div>
 </div>
 
-<!--<div class="aaaa" *ngIf="auth.isLoggedIn()">{{ details?.email }}</div>-->
-
-
 
 
 <router-outlet></router-outlet>
-
-<!--{{ auth.getUserDetails()?.name }}-->

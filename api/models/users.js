@@ -22,7 +22,6 @@ const userSchema = new mongoose.Schema({
     },
 
     productName: { type: String },
-    productPrice: { type: Number },
     productAmount: { type: Number },
 
     hash: String,
