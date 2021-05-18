@@ -52,8 +52,8 @@ userSchema.methods.generateJwt = function() {
             name: this.name,
             exp: parseInt(expiry.getTime() / 1000)
         },
-        'MY_SECRET'
-    ); // DO NOT KEEP YOUR SECRET IN THE CODE!
+        'Q8bb6MC*^ec9uf$rgcVS^Z$9$4CnPND-zYhg%hj&K3Nq+cMzm^b!cTc#Lv-TKAzh'
+    ); //Project secret should not be kept in the code when in actual use.
 };
 
 mongoose.model('User', userSchema);

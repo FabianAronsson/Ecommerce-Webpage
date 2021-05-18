@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, UserDetails } from '../authentication.service';
 import { CartService, UserPayload } from "../cart-service.service";
-import { ProductComponent } from '../product/product.component';
 
 
 @Component({
@@ -36,6 +35,7 @@ export class CartComponent implements OnInit{
 
     if(this.auth.isLoggedIn()){
 
+      //Get user information if the user is logged in
       this.userProduct._id = this.auth.getUserDetails()._id;
       this.getUserInformation();
 
@@ -60,6 +60,7 @@ export class CartComponent implements OnInit{
           //If the productID is empty, then that means that the cart is empty.
           if(this.userProduct.productID === ""){
             this.showCart = false;
+            this.price = 0;
           }
         },
         err => {
@@ -97,7 +98,7 @@ export class CartComponent implements OnInit{
     );
   }
 
-  //Whether or not to show the cart or not
+  //Whether or not to show the cart or not, this event fires when 
   updateCartCondition(){
     this.showCart = false;
     this.userProduct.productAmount = 1;

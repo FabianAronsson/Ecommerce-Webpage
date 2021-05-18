@@ -10,15 +10,14 @@
             <div *ngIf="showCart; else cartIsEmpty" class="card productCard">
                 <div class="card-body d-flex justify-content-between align-items-center">
                     <div class="d-flex">
-                        <img [src]="productInfo.iconPath" alt="">
+                        <img [src]="productInfo.iconPath" alt="Product icon">
                     </div>
                     <h5 class="card-subtitle mb-2 me-4 text-muted">{{ productInfo.name }}</h5>
-
-                    <button (click)="decrementCounter()" class="btn  productButton">
+                    <button (click)="decrementCounter()" class="btn productButton">
                         <i class="fas fa-minus"></i>
                     </button>
                     <h4 class="counter">{{ counter }}</h4>
-                    <button (click)="incrementCounter()" class="btn  productButton">
+                    <button (click)="incrementCounter()" class="btn productButton">
                         <i class="fas fa-plus"></i>
                     </button>
                     <button (click)="updateCartCondition()" class="btn productButton">
@@ -37,9 +36,9 @@
                         <h6 class="card-subtitle mb-2 me-4 text-muted">Var vänlig logga in för att se din kundvagn.</h6>
                     </div>
                 </ng-template>
-
             </ng-template>
         </div>
+
         <div class="col-lg mb-3">
             <div class="card checkoutCard">
                 <div class="card-body">
@@ -58,8 +57,10 @@
                         <h4 class="priceInfo">{{ price }} kr</h4>
                     </div>
                     <h6 class="card-subtitle mb-2 d-flex">
-                        <h6 class="text-muted"> Leveranstid:</h6> &nbsp; 2-4 arbetsdagar</h6>
-
+                        <h6 class="text-muted"> Leveranstid:</h6> &nbsp;
+                        <div *ngIf="showCart; else deliverTime">2-4 arbetsdagar</div>
+                        <ng-template #deliverTime>-</ng-template>
+                    </h6>
                     <button class="btn btn-primary" #target style="width: 100%;"><h4>Gå till kassan</h4></button>
                 </div>
             </div>

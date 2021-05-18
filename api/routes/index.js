@@ -6,21 +6,22 @@ const jwt = require('express-jwt');
 const router = express.Router();
 
 const auth = jwt({
-    secret: 'MY_SECRET',
+    secret: 'Q8bb6MC*^ec9uf$rgcVS^Z$9$4CnPND-zYhg%hj&K3Nq+cMzm^b!cTc#Lv-TKAzh',
     userProperty: 'payload'
 });
 
 
-// profile
+//profile
 router.get('/profile', auth, ctrlProfile.profileRead);
 
+//cart
 router.post('/cart', ctrlCart.updateCart);
 router.post('/showCart', ctrlCart.getUserCart);
 router.post('/user', ctrlProfile.profileRead)
 
 router.get('/home', ctrlProfile.profileRead)
 
-// authentication
+//authentication
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 

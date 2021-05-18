@@ -6,13 +6,13 @@ const User = mongoose.model('User');
 const Product = mongoose.model('Product');
 
 module.exports.updateCart = (req, res) => {
-    // If no user ID exists in the JWT return a 401
+    //If no user ID exists in the JWT return a 401
     if (!req.body._id) {
         res.status(401).json({
             message: 'UnauthorizedError: private profile'
         });
     } else {
-        // Otherwise continue
+        //Otherwise continue
         User.findById(req.body._id).exec(function(err, user) {
             mongoose.set('useFindAndModify', false);
             User.findOneAndUpdate({ _id: req.body._id }, { productName: req.body.productID, productAmount: req.body.productAmount }).then(function() {
@@ -26,7 +26,7 @@ module.exports.updateCart = (req, res) => {
 };
 
 
-//CHANGE
+//Gets the user's cart
 module.exports.getUserCart = (req, res) => {
     // If no user ID exists in the JWT return a 401
     if (!req.body._id) {
