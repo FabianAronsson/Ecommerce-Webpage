@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, UserDetails } from '../authentication.service';
-import { CartService, UserPayload } from "../cart-service.service";
+import { CartService, UserPayload } from '../cart-service.service';
 
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: 'app-receipt',
+  templateUrl: './receipt.component.html',
+  styleUrls: ['./receipt.component.css']
 })
-export class CartComponent implements OnInit{
+export class ReceiptComponent implements OnInit {
 
-  constructor(public auth:AuthenticationService, private cart:CartService ) { }
+  constructor(public auth:AuthenticationService, private cart:CartService) { }
 
   userProduct:UserPayload = {
     _id: "",
@@ -31,6 +31,7 @@ export class CartComponent implements OnInit{
   price = 0;
   showCart = true;
   enableCheckout = true;
+
 
    ngOnInit(): void {
 
@@ -86,43 +87,5 @@ export class CartComponent implements OnInit{
         console.error(err);
       }
     );
-  }
-
-  updateUserCart(){
-    this.userProduct._id = this.auth.getUserDetails()._id;
-    this.cart.addToCart(this.userProduct).subscribe(
-      () => {
-        //success
-      },
-      err => {
-        console.error(err);
-      }
-    );
-  }
-
-  //Whether or not to show the cart or not, this event fires when 
-  updateCartCondition(){
-    this.showCart = false;
-    this.enableCheckout = false;
-    this.userProduct.productAmount = 1;
-    this.userProduct.productID = "";
-    this.price = 0;
-    this.updateUserCart();
-  }
-
-  incrementCounter(){
-    this.counter++;
-    this.price = this.productInfo.price * this.counter;
-    this.userProduct.productAmount = this.counter;
-    this.updateUserCart();
-  }
-
-  decrementCounter(){
-    if(this.counter > 1){
-      this.counter--;
-      this.price = this.productInfo.price * this.counter;
-      this.userProduct.productAmount = this.counter;
-      this.updateUserCart();
-    }
   }
 }

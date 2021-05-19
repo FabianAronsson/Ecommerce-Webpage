@@ -61,7 +61,19 @@
                         <div *ngIf="showCart; else deliverTime">2-4 arbetsdagar</div>
                         <ng-template #deliverTime>-</ng-template>
                     </h6>
-                    <button class="btn btn-primary" #target style="width: 100%;"><h4>Gå till kassan</h4></button>
+                    <button *ngIf="auth.isLoggedIn() && enableCheckout; else loggedOut" routerLink="/receipt" class="btn btn-primary" #target style="width: 100%;">
+                        <h4>
+                            Gå till kassan
+                        </h4>
+                    </button>
+
+                    <ng-template #loggedOut>
+                        <button class="btn btn-primary" #target style="width: 100%;">
+                            <h4>
+                                Vänligen logga in eller lägg till en vara
+                            </h4>
+                        </button>
+                    </ng-template>
                 </div>
             </div>
         </div>

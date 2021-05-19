@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
+import { ReceiptComponent } from './receipt/receipt.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { CartComponent } from './cart/cart.component';
     ProductComponent,
     FooterComponent,
     CartComponent,
+    ReceiptComponent,
+    CheckoutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

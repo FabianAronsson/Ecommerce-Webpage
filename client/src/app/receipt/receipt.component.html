@@ -1,0 +1,23 @@
+<div class="col-lg mt-5 d-flex justify-content-center">
+    <div class="card" data-aos="zoom-in">
+        <div class="card-body">
+            <h2>Ordersammanfattning</h2>
+            <hr>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <img [src]="productInfo.iconPath" alt="Product icon">
+                <h5 class="card-subtitle ms-2 me-4 text-muted">{{ productInfo.name }}</h5>
+                <h4 class="me-2 text-muted">{{ userProduct.productAmount }} st </h4>
+                <h4>{{ price }} kr</h4>
+            </div>
+            <h6 class="card-subtitle mt-4 mb-2 d-flex">
+                <h6 class="text-muted"> Leveranstid:</h6> &nbsp;
+                <div>2-4 arbetsdagar</div>
+            </h6>
+            <button routerLink="/checkout" class="btn btn-primary" style="width: 100%;">
+                <h4>
+                    Betala
+                </h4>
+            </button>
+        </div>
+    </div>
+</div>
