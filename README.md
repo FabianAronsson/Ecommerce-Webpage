@@ -9,3 +9,5 @@
 In order to start the project, enter "**npm start**" in both terminals, starting with the first terminal followed by the second terminal.
 
 The backend **MUST** be started before the frontend. 
+
+Afterwards, go into your browser and enter localhost:4200.
