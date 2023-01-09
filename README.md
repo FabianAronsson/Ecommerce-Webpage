@@ -1,4 +1,4 @@
-# Slutprojekt-WES01-WEB02
+# Ecommerce-Webpage
 
 ## To try out this project, do the following:
 
